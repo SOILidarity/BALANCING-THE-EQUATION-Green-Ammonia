@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Ammonia: Balancing the Equation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'brand-green': '#4CAF50',
+              'brand-green-dark': '#388E3C',
+              'brand-green-light': '#C8E6C9',
+              'brand-yellow': '#FFC107',
+              'brand-brown': '#795548',
+              'brand-bg': '#F1F8E9',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      .animate-on-scroll {
+        opacity: 0;
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      .fade-in-up { transform: translateY(40px); }
+      .pop-in { transform: scale(0.8) rotate(-5deg); }
+      .pop-in.is-visible { transform: scale(1) rotate(0deg); }
+
+      @keyframes aurora {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-animate-aurora {
+        background: linear-gradient(-45deg, #4CAF50, #388E3C, #004D40, #2E7D32);
+        background-size: 400% 400%;
+        animation: aurora 18s ease infinite;
+      }
+      
+      @keyframes flow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .bg-animate-flow {
+        background: linear-gradient(125deg, #C8E6C9, #F1F8E9, #E8F5E9, #C8E6C9);
+        background-size: 300% 300%;
+        animation: flow 25s ease infinite;
+      }
+
+      /* Animations for GreenerTomorrowSection */
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 20px 5px rgba(76, 175, 80, 0.4); }
+        50% { transform: scale(1.05); box-shadow: 0 0 40px 15px rgba(76, 175, 80, 0.6); }
+      }
+      .animate-pulse-glow {
+        animation: pulse 3s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 6s infinite ease-in-out;
+      }
+      
+      .tomorrow-line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 1.5s ease-in-out;
+      }
+      .is-visible .tomorrow-line {
+        stroke-dashoffset: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-bg text-gray-800">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
